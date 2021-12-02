@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+@for $i from 1 through 6{
+  h#{$i} {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem * (1.7/$i);
+  }
+}
+
+body{
+  font-family: proxima-nova-condensed, sans-serif;
+  font-style: normal;
+  font-size: 1rem;
+}
