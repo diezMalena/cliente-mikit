@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrate en Mitik</title>
+</head>
+<div class="container">
+  <header class="row">
+    <div class="col-12">
+      <nav class="navbar navbar-expand-lg navbar-light bg-cabecera">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-4">
+              <a class="navbar-brand img-fluid" routerLink="/"><img src="{{ imgLogo }}" /></a>
+            </div>
+          </div>
+          <div class="col-8">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse float-end" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Información</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ayuda</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <body class="bg-contenido">
+    <div class="row">
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="col-10 py-3 px-3 fondoPref">
+          <h2 class="text-center">¡Elige tus preferencias y te mostraremos personas afines a tus gustos!</h2>
+          <div class="row">
+            <form>
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="exampleInputEmail1" class="form-label negrita">¿Qué tipo de relación buscas?</label>
+                </div>
+                <div class="col-7">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Elige un tipo</option>
+                    <option value="seria">Seria</option>
+                    <option value="esporadica">Esporádica</option>
+                    <option value="otra">Otra</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="exampleInputEmail1" class="form-label negrita">¿De qué género tienes interés?</label>
+                </div>
+                <div class="col-7">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected>Elige un género</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="nb">No binario</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="exampleInputPassword1" class="form-label negrita">¿Tienes hijos?</label>
+                </div>
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tiene" id="tieneSi">
+                    <label class="form-check-label" for="tiene">
+                      Si
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="tiene" id="tieneNo" checked>
+                    <label class="form-check-label" for="tiene">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="exampleInputPassword" class="form-label negrita">¿Quieres hijos?</label>
+                </div>
+                <div class="col-7">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="quiere" id="quiereSi">
+                    <label class="form-check-label" for="quiere">
+                      Si
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="quiere" id="quiereNo" checked>
+                    <label class="form-check-label" for="quiere">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="customRange2" class="form-label negrita">¿Interés por el deporte?</label>
+                </div>
+                <div class="col-7">
+                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="customRange2" class="form-label negrita">¿Interés por el arte?</label>
+                </div>
+                <div class="col-7">
+                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="customRange2" class="form-label negrita">¿Interés por la música?</label>
+                </div>
+                <div class="col-7">
+                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-5">
+                  <label for="customRange2" class="form-label negrita">¿Interés por la política?</label>
+                </div>
+                <div class="col-7">
+                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                </div>
+              </div>
+              <div class="row py-2 d-flex justify-content-center">
+                <div class="col-6 col-xl-4">
+                  <a routerLinkActive="active" routerLink=""
+                    class="btn btn-lg bg-boton">Registrarse</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer class="bg-cabecera">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-4 float-start px-2">
+          <p>@Copyright</p>
+        </div>
+        <div class="col-8 float-start px-2">
+          <p class="text-end">Creado por Malena</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+</html>
