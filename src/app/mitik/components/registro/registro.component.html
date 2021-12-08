@@ -75,12 +75,14 @@
                     <input type="text" class="col-12 col-xl-9" id="floatingInput">
                   </div>
                   <div class="row py-2">
-                    <label class="col-12 col-xl-3 negrita">Apellidos:</label>
-                    <select name="genero" id="floatingInput" class="col-12 col-xl-9">
+                    <label class="col-12 col-xl-3 negrita">Géneros:</label>
+                    <!--<select name="genero" id="floatingInput" class="col-12 col-xl-9" *ngFor="let genero of generos; index as i">
                       <option value="">Femenino</option>
                       <option value="">Masculino</option>
                       <option value="">No binario</option>
-                    </select>
+                    </select> -->
+
+                    {{ generos[0].descripcion }}
                   </div>
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">Contraseña:</label>
