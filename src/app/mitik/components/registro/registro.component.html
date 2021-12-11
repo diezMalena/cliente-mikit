@@ -42,54 +42,114 @@
   <body class="bg-contenido">
     <div class="row">
       <div class="container-fluid d-flex justify-content-center">
-        <div class="col-10">
+        <div class="col-12 py-3 px-3">
+          <div class="row">
+            <div class="col-12 col-xl-12">
+              <h2 class="text-center">¡Registrate y conoce a cientos de personas!</h2>
+            </div>
+          </div>
           <main class="form-signin py-2">
-            <form class="py-2 px-5 border border-dark gif">
+            <form [formGroup]="registro" (ngSubmit)="onSubmit()" class="py-2 px-5 border border-dark">
               <div class="row">
                 <div class="col-12 col-xl-8 text-center">
-                  <h2>¡Registrate y conoce a cientos de personas!</h2>
+
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">E-mail:</label>
-                    <input type="email" class="col-12 col-xl-9" id="floatingInput">
+                    <input type="email" class="col-12 col-xl-9" formControlName="correo">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['correo'].errors">
+                        <div>El correo: </div>
+                        <div *ngIf="formulario['correo'].errors['required']">No puede estar vacío</div>
+                        <div *ngIf="formulario['correo'].errors['minlenght']">Debe contener más de 3 caracteres</div>
+                      </div>
+                    </div>
                   </div>
+
+
+
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">Nombre:</label>
-                    <input type="text" class="col-12 col-xl-9" id="floatingInput">
+                    <input type="text" class="col-12 col-xl-9" formControlName="nombre">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['nombre'].errors">
+                        <div>El nombre: </div>
+                        <div *ngIf="formulario['nombre'].errors['required']">No puede estar vacío</div>
+                      </div>
+                    </div>
                   </div>
-                  <div class="row py-2">
-                    <label class="col-12 col-xl-3 negrita">Apellidos:</label>
-                    <input type="text" class="col-12 col-xl-9" id="floatingInput">
-                  </div>
-                  <div class="row py-2">
-                    <label class="col-12 col-xl-3 negrita">Edad:</label>
-                    <input type="number" class="col-12 col-xl-9" id="floatingInput">
 
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Fecha nacimiento:</label>
+                    <input type="date" class="col-12 col-xl-9" formControlName="fechaNacimiento">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['fechaNacimiento'].errors">
+                        <div>La fecha de nacimiento: </div>
+                        <div *ngIf="formulario['fechaNacimiento'].errors['required']">No puede estar vacío</div>
+                      </div>
+                    </div>
                   </div>
+
+
+
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">Ciudad:</label>
-                    <input type="text" class="col-12 col-xl-9" id="floatingInput">
+                    <input type="text" class="col-12 col-xl-9" formControlName="ciudad">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['ciudad'].errors">
+                        <div>La ciudad: </div>
+                        <div *ngIf="formulario['ciudad'].errors['required']">No puede estar vacía</div>
+                      </div>
+                    </div>
+                  </div>
 
-                  </div>
+
                   <div class="row py-2">
-                    <label class="col-12 col-xl-3 negrita">Apellidos:</label>
-                    <input type="text" class="col-12 col-xl-9" id="floatingInput">
+                    <label class="col-12 col-xl-3 negrita">Descripción:</label>
+                    <textarea class="col-12 col-xl-9" formControlName="descripcion"></textarea>
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['descripcion'].errors">
+                        <div>La descripción: </div>
+                        <div *ngIf="formulario['descripcion'].errors['required']">No puede estar vacía</div>
+                      </div>
+                    </div>
                   </div>
+
+
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">Géneros:</label>
-                    <!--<select name="genero" id="floatingInput" class="col-12 col-xl-9" *ngFor="let genero of generos; index as i">
-                      <option value="">Femenino</option>
-                      <option value="">Masculino</option>
-                      <option value="">No binario</option>
-                    </select> -->
+                    <select class="form-select" formControlName="id_genero" class="col-12 col-xl-9">
+                      <option value="" disabled>Elige tu género</option>
+                      <option *ngFor="let genero of generos" [ngValue]="genero.id">{{genero.descripcion}}</option>
+                    </select>
 
-                    {{ generos[0].descripcion }}
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['id_genero'].errors">
+                        <div>El género: </div>
+                        <div *ngIf="formulario['id_genero'].errors['required']">No puede estar vacío</div>
+                      </div>
+                    </div>
                   </div>
+
+
+
                   <div class="row py-2">
                     <label class="col-12 col-xl-3 negrita">Contraseña:</label>
-                    <input type="password" class="col-12 col-xl-9" id="floatingPassword">
+                    <input type="password" class="col-12 col-xl-9" formControlName="contraseña">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['contraseña'].errors">
+                        <div>La contraseña: </div>
+                        <div *ngIf="formulario['contraseña'].errors['required']">No puede estar vacía</div>
+                        <div *ngIf="formulario['contraseña'].errors['minlenght']">Debe contener más de 5 caracteres
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div class="col-12 col-xl-4 py-2">
+
+
+                <div class="col-12 col-xl-4 py-2 px-2">
                   <div class="row d-flex justify-content-center">
                     <input type="text" class="imgRedonda">
                   </div>
@@ -103,8 +163,7 @@
               </div>
               <div class="row py-2 d-flex justify-content-center">
                 <div class="col-6 col-xl-4">
-                  <a routerLinkActive="active" routerLink="registro-preferencias"
-                    class="btn btn-lg bg-boton">Registrarse</a>
+                  <input type="submit" value="Registrarme" class="btn bg-boton">
                 </div>
               </div>
             </form>

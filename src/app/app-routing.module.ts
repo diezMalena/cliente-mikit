@@ -5,12 +5,8 @@ import { RegistroComponent } from './mitik/components/registro/registro.componen
 const routes: Routes = [
   {
     path:'',
-    loadChildren:() => import('./core/core.module').then((m) => m.CoreModule) ,
+    loadChildren:() => import('./mitik/mitik.module').then((m) => m.MitikModule)
   },
-  {
-    path:'mitik',
-    loadChildren:() => import('./mitik/mitik.module').then((m) => m.MitikModule) ,
-  }
 ];
 
 @NgModule({
