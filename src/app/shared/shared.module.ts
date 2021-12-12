@@ -5,7 +5,9 @@ import { SharedRoutingModule } from './shared-routing.module';
 import { NotificacionComponent } from './components/notificacion/notificacion.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NotificacionComponent
+  ],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -14,6 +16,7 @@ import { NotificacionComponent } from './components/notificacion/notificacion.co
   exports: [
     CommonModule,
     HttpClientModule,
+    NotificacionComponent,
   ]
 })
 export class SharedModule { }

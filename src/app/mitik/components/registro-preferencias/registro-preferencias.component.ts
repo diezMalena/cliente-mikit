@@ -89,11 +89,10 @@ export class RegistroPreferenciasComponent implements OnInit {
       next: () => {
         this.restNotificationService.showMessage(`Preferencia registrada correctamente.`, '');
         console.log('funciona preferencias');
-        //this.router.navigateByUrl('registro');
+        this.router.navigateByUrl('login');
       },
       error: e => {
         this.restNotificationService.showMessage('Error: ' + e );
-        //this.router.navigateByUrl('registro');
       }
     });
   }
@@ -107,17 +106,15 @@ export class RegistroPreferenciasComponent implements OnInit {
     this.submitted = true;
     //if(this.preferencias.invalid) return;
 
-    //this.restPersonaService.updatePersona(this.correo, this.preferencias.value.tieneHijos, this.preferencias.value.quiereHijos, this.preferencias.value.tipoRelacion).subscribe({
 
     this.restPersonaService.updatePersona(this.correo,this.preferencias.controls['tieneHijos'].value,this.preferencias.controls['quiereHijos'].value, this.preferencias.value.tipoRelacion).subscribe({
       next: () => {
         this.restNotificationService.showMessage(`Usuario ${this.preferencias.value.correo} registrado correctamente.`, '');
         console.log('Funciona actualizar persona');
-        //this.router.navigateByUrl('registro');
+        this.router.navigateByUrl('login');
       },
       error: e => {
         this.restNotificationService.showMessage('Error: ' + e );
-        //this.router.navigateByUrl('registro');
       }
     });
 
@@ -162,14 +159,20 @@ export class RegistroPreferenciasComponent implements OnInit {
         next: () => {
           this.restNotificationService.showMessage(`Gusto genero add.`, '');
           console.log('Funciona gusto genero');
-          //this.router.navigateByUrl('registro');
+          this.router.navigateByUrl('login');
         },
         error: e => {
           this.restNotificationService.showMessage('Error: ' + e );
-          //this.router.navigateByUrl('registro');
         }
       });
 
+      this.onReset();
+  }
 
+
+
+  onReset(){
+    this.submitted = false;
+    this.preferencias.reset();
   }
 }

@@ -78,4 +78,17 @@ export class RestPersonaService {
     return this.http.post(url, gustoGenero, {headers: headers});
   }
 
+
+  public iniciarSesion(correo: string, contraseña: string){
+    let url: string = "http://127.0.0.1:8000/api/iniciarSesion";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let datos = {
+      'correo': correo,
+      'contraseña': contraseña,
+    };
+    var datosString = JSON.stringify(datos);
+    return this.http.post(url, datosString, {headers: headers});
+  }
 }

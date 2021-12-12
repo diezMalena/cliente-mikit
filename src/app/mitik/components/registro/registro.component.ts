@@ -60,7 +60,7 @@ export class RegistroComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-    //if (this.registro.invalid) return;
+    if (this.registro.invalid) return;
 
 
     let persona = new Persona(
@@ -81,11 +81,10 @@ export class RegistroComponent implements OnInit {
     );
 
 
-    this.onReset();
-
     this.restPersonaService.addPersona(persona).subscribe({
       next: () => {
         this.restNotificationService.showMessage(`Usuario ${persona.correo} registrado correctamente.`, '');
+        //AQUI NO MUESTRA ESTE MENSAJE!
         console.log('Funciona registro');
         this.restRecogerDatos.cambiarCorreo(persona.correo);
         //console.log(persona.correo);
@@ -93,8 +92,12 @@ export class RegistroComponent implements OnInit {
       },
       error: e => {
         this.restNotificationService.showMessage('Fallo en el registro: '+ e)
+        //AQUI NO MUESTRA EL ERROR!
       }
-    })
+    });
+
+
+    this.onReset();
   }
 
 
