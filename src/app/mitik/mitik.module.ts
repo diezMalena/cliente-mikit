@@ -4,12 +4,14 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroPreferenciasComponent } from './components/registro-preferencias/registro-preferencias.component';
 import { MitikRoutingModule } from './mitik-routing.module';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     RegistroComponent,
-    RegistroPreferenciasComponent
+    RegistroPreferenciasComponent,
+    LoginComponent
   ],
   imports: [
     SharedModule,

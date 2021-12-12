@@ -60,7 +60,7 @@
                       <div class="col-3" *ngIf="submitted && formulario['correo'].errors">
                         <div>El correo: </div>
                         <div *ngIf="formulario['correo'].errors['required']">No puede estar vacío</div>
-                        <div *ngIf="formulario['correo'].errors['minlenght']">Debe contener más de 3 caracteres</div>
+                        <div *ngIf="formulario['correo'].errors['email']">Debe tener formato e-mail</div>
                       </div>
                     </div>
                   </div>
@@ -161,6 +161,11 @@
                   </div>
                 </div>
               </div>
+
+              <div class="row">
+                <app-notificacion></app-notificacion>
+              </div>
+
               <div class="row py-2 d-flex justify-content-center">
                 <div class="col-6 col-xl-4">
                   <input type="submit" value="Registrarme" class="btn bg-boton">
