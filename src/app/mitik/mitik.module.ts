@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { MitikRoutingModule } from './mitik-routing.module';
 import { RegistroComponent } from './components/registro/registro.component';
-import { RegistroPreferenciasComponent } from './components/registro-preferencias/registro-preferencias.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegistroPreferenciasComponent } from './components/registro-preferencias/registro-preferencias.component';
+import { MitikRoutingModule } from './mitik-routing.module';
 
 
 @NgModule({
@@ -14,7 +13,9 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     SharedModule,
-    MitikRoutingModule
+    FormsModule,
+    ReactiveFormsModule,
+    MitikRoutingModule,
   ]
 })
 export class MitikModule { }

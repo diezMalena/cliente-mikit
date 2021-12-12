@@ -44,34 +44,50 @@
         <div class="col-10 py-3 px-3 fondoPref">
           <h2 class="text-center">¡Elige tus preferencias y te mostraremos personas afines a tus gustos!</h2>
           <div class="row">
-            <form>
+
+            <form [formGroup]="preferencias" (ngSubmit)="onSubmit()">
+
               <div class="row mb-3">
                 <div class="col-5">
-                  <label for="exampleInputEmail1" class="form-label negrita">¿Qué tipo de relación buscas?</label>
+                  <label class="form-label negrita">¿Qué tipo de relación buscas?</label>
                 </div>
                 <div class="col-7">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Elige un tipo</option>
+                  <select class="form-select" aria-label="Default select example" formControlName="tipoRelacion">
+                    <option value="" disabled>Elige tu tipo</option>
                     <option value="seria">Seria</option>
                     <option value="esporadica">Esporádica</option>
                     <option value="otra">Otra</option>
                   </select>
+                  <div class="row">
+                    <div class="col-3" *ngIf="submitted && formulario['tipoRelacion'].errors">
+                      <div>El tipo de relacion: </div>
+                      <div *ngIf="formulario['tipoRelacion'].errors['required']">No puede estar vacío</div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
+
+
               <div class="row mb-3">
                 <div class="col-5">
-                  <label for="exampleInputEmail1" class="form-label negrita">¿De qué género tienes interés?</label>
+                  <label class="form-label negrita">¿De qué género tienes interés?</label>
                 </div>
                 <div class="col-7">
-                  <select class="form-select" aria-label="Default select example">
-                    <option selected>Elige un género</option>
-                    <option value="femenino">Femenino</option>
-                    <option value="masculino">Masculino</option>
-                    <option value="nb">No binario</option>
+                  <select class="form-select" aria-label="Default select example" formControlName="id_genero">
+                    <option value="" disabled>Elige tu género</option>
+                    <option *ngFor="let genero of generos" [ngValue]="genero.id">{{genero.descripcion}}</option>
                   </select>
+                  <div class="row">
+                    <div class="col-3" *ngIf="submitted && formulario['id_genero'].errors">
+                      <div>El género: </div>
+                      <div *ngIf="formulario['id_genero'].errors['required']">No puede estar vacío</div>
+                    </div>
+                  </div>
                 </div>
               </div>
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
@@ -79,19 +95,21 @@
                 </div>
                 <div class="col-7">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tiene" id="tieneSi">
-                    <label class="form-check-label" for="tiene">
-                      Si
-                    </label>
+                    <input class="form-check-input" type="radio" value="1" name="tieneHijos" formControlName="tieneHijos"> Si
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="tiene" id="tieneNo" checked>
-                    <label class="form-check-label" for="tiene">
-                      No
-                    </label>
+                    <input class="form-check-input" type="radio" value="0" name="tieneHijos" formControlName="tieneHijos" ng-checked="true"> No
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3" *ngIf="submitted && formulario['tieneHijos'].errors">
+                    <div>La pregunta: </div>
+                    <div *ngIf="formulario['tieneHijos'].errors['required']">No puede estar vacía</div>
                   </div>
                 </div>
               </div>
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
@@ -99,59 +117,70 @@
                 </div>
                 <div class="col-7">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="quiere" id="quiereSi">
-                    <label class="form-check-label" for="quiere">
-                      Si
-                    </label>
+                    <input class="form-check-input" type="radio"  value="1" name="quiereHijos" formControlName="quiereHijos"> Si
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="quiere" id="quiereNo" checked>
-                    <label class="form-check-label" for="quiere">
-                      No
-                    </label>
+                    <input class="form-check-input" type="radio" value="0" name="quiereHijos" formControlName="quiereHijos" ng-checked="true"> No
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3" *ngIf="submitted && formulario['quiereHijos'].errors">
+                    <div>La pregunta: </div>
+                    <div *ngIf="formulario['quiereHijos'].errors['required']">No puede estar vacía</div>
                   </div>
                 </div>
               </div>
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
                   <label for="customRange2" class="form-label negrita">¿Interés por el deporte?</label>
                 </div>
                 <div class="col-7">
-                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                  <input type="range" class="w-100" min="0" max="100" value="50" formControlName="deporte">
                 </div>
               </div>
+
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
                   <label for="customRange2" class="form-label negrita">¿Interés por el arte?</label>
                 </div>
                 <div class="col-7">
-                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                  <input type="range" class="w-100" min="0" value="50" max="100" formControlName="arte">
                 </div>
               </div>
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
                   <label for="customRange2" class="form-label negrita">¿Interés por la música?</label>
                 </div>
                 <div class="col-7">
-                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                  <input type="range" class="w-100" min="0" value="50" max="100" formControlName="musica">
                 </div>
               </div>
+
+
+
 
               <div class="row mb-3">
                 <div class="col-5">
                   <label for="customRange2" class="form-label negrita">¿Interés por la política?</label>
                 </div>
                 <div class="col-7">
-                  <input type="range" class="w-100" min="0" max="100" id="customRange2">
+                  <input type="range" class="w-100" min="0" value="50" max="100" formControlName="politica">
                 </div>
               </div>
+
+
               <div class="row py-2 d-flex justify-content-center">
                 <div class="col-6 col-xl-4">
-                  <a routerLinkActive="active" routerLink=""
-                    class="btn btn-lg bg-boton">Registrarse</a>
+                  <input type="submit" value="Guardar preferencias" class="btn bg-boton">
                 </div>
               </div>
             </form>
@@ -160,6 +189,7 @@
       </div>
     </div>
   </body>
+
 
   <footer class="bg-cabecera">
     <div class="row">
