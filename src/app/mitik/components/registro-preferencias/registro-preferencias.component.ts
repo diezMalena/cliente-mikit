@@ -47,8 +47,8 @@ export class RegistroPreferenciasComponent implements OnInit {
       arte: ['', [Validators.required]],
       musica: ['', [Validators.required]],
       politica: ['', [Validators.required]],
-      tieneHijos:['', [Validators.required]],
-      quiereHijos:['', [Validators.required]]
+      tieneHijos:['0', [Validators.required]],
+      quiereHijos:['0', [Validators.required]]
     });
   }
 

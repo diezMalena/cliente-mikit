@@ -91,4 +91,21 @@ export class RestPersonaService {
     var datosString = JSON.stringify(datos);
     return this.http.post(url, datosString, {headers: headers});
   }
+
+
+
+
+  public traerSugerencias(correo: string){
+    let url: string = "http://127.0.0.1:8000/api/sugerencias";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let datos = {
+      'correo': correo,
+    };
+    var datosString = JSON.stringify(datos);
+    return this.http.post(url, datosString, {headers: headers});
+  }
+
+
 }
