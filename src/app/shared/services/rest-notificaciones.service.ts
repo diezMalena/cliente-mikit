@@ -16,7 +16,7 @@ export class RestNotificacionesService {
   showMessage(mensaje: string, route ?: string, params?: any) {
     this.mensaje = mensaje;
     this.visible = true;
-    this.waitToHideAndRoute(route, params);
+    this.waitToHideAndRoute(undefined, params);
   }
 
 
@@ -29,9 +29,9 @@ export class RestNotificacionesService {
    * Espera 4 segundos antes de ocultar el mensaje
    */
   waitToHideAndRoute(route ?: string, params ?: any): void {
-    //setTimeout(() => {
+    setTimeout(() => {
       this.hideMessage();
       if(route != undefined) this.router.navigate([route], params);
-    //}, 3000);
+    }, 3000);
   }
 }

@@ -8,6 +8,7 @@ import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 import { AmigosConectadosComponent } from './components/amigos-conectados/amigos-conectados.component';
+import { BuscarPersonaComponent } from './components/buscar-persona/buscar-persona.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AmigosConectadosComponent } from './components/amigos-conectados/amigos
     LoginComponent,
     PrincipalComponent,
     NotificacionesComponent,
-    AmigosConectadosComponent
+    AmigosConectadosComponent,
+    BuscarPersonaComponent,
   ],
   imports: [
     SharedModule,

@@ -10,28 +10,30 @@
 <div class="container">
   <header class="row">
     <div class="col-12">
-      <nav class="navbar navbar-expand-lg navbar-light bg-cabecera">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-4">
-              <a class="navbar-brand img-fluid" routerLink="/"><img src="{{ imgLogo }}" /></a>
-            </div>
+      <nav class="bg-cabecera container-fluid">
+        <div class="row">
+          <div class="col-4">
+            <a class="navbar-brand img-fluid" routerLink="/"><img src="{{ imgLogo }}" /></a>
           </div>
-          <div class="col-8">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse float-end" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Información</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Ayuda</a>
-                </li>
-              </ul>
-            </div>
+          <div class="col-8 float-end">
+            <nav class="navbar navbar-expand-lg navbar-light row float-end">
+              <div class="dropdown col-4">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Información</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Ayuda</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
       </nav>
@@ -80,10 +82,6 @@
                     </div>
                   </div>
                 </div>
-              </div>
-
-              <div class="row">
-                <app-notificacion></app-notificacion>
               </div>
 
               <div class="row py-2 d-flex justify-content-center">
