@@ -119,4 +119,12 @@ export class RestPersonaService {
   }
 
 
+  public getAmigosConectados(correo:string){
+    let url: string = "http://127.0.0.1:8000/api/amigosConectados";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let dato={correo:correo};
+    return this.http.post(url, dato, {headers: headers});
+  }
 }

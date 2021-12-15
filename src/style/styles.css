@@ -26,6 +26,12 @@
   height: 40px;
 }
 
+.smallButton {
+  border-radius: 10px 10px 10px 10px;
+  width: 100px;
+  height: 20px;
+}
+
 h1, .h1 {
   font-family: 'Montserrat', sans-serif;
   font-size: 3.4rem;
