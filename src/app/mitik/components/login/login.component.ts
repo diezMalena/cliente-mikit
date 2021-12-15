@@ -57,8 +57,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('principal');
       },
       error: e => {
-        this.restNotificationService.showMessage(`Fallo en el login: `+e),
-        console.log('Persona no registrada');
+        this.restNotificationService.showMessage('El correo no esta registrado.'),
+        console.log('Persona no logueada');
       }
     })
     this.onReset();

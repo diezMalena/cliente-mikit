@@ -47,11 +47,11 @@
         <div class="col-12 py-3 px-3">
           <div class="row">
             <div class="col-12 col-xl-12">
-              <h2 class="text-center">¡Registrate y conoce a cientos de personas!</h2>
+              <h2 class="text-center">¡Te estabamos esperando!</h2>
             </div>
           </div>
-          <main class="form-signin py-2">
-            <form [formGroup]="login" (ngSubmit)="onSubmit()" class="py-2 px-5 border border-dark">
+          <main class="form-signin py-2 border border-dark">
+            <form [formGroup]="login" (ngSubmit)="onSubmit()" class="py-2 px-5">
               <div class="row">
                 <div class="col-12 col-xl-8 text-center">
 
@@ -84,12 +84,30 @@
                 </div>
               </div>
 
+              <div class="row">
+                <app-notificacion></app-notificacion>
+              </div>
+
               <div class="row py-2 d-flex justify-content-center">
                 <div class="col-6 col-xl-6 d-flex justify-content-center">
                   <input type="submit" value="Iniciar sesión" class="bg-boton redonditos">
                 </div>
               </div>
             </form>
+
+            <div class="row py-2 d-flex justify-content-center">
+              <div class="col-12 text-center">
+                <p>¿No tienes cuentas aún?   <a href="" routerLink="/registro">Regístrate</a></p>
+              </div>
+            </div>
+
+
+            <div class="row py-2 d-flex justify-content-center">
+              <div class="col-12 text-center">
+                <p><a href="" routerLink="/olvido-contrasenia">He olvidado la contraseña</a></p>
+              </div>
+            </div>
+
           </main>
         </div>
       </div>
