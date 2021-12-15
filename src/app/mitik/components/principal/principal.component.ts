@@ -59,6 +59,18 @@ export class PrincipalComponent implements OnInit {
     });
   }
 
+  public cerrarSesion(correo:string){
+    this.restPersonaService.cerrarSesion(correo).subscribe({
+      next: () => {
+        console.log('Cierre de sesion correcto');
+        this.router.navigateByUrl('');
+      },
+      error: e => {
+        this.restNotificationService.showMessage('Error, no se ha cerrado sesion.');
+      }
+    })
+  }
+
 
 
 }
