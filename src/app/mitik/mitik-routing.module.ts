@@ -4,6 +4,7 @@ import { AmigosConectadosComponent } from './components/amigos-conectados/amigos
 import { BuscarPersonaComponent } from './components/buscar-persona/buscar-persona.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
+import { OlvidoContraseniaComponent } from './components/olvido-contrasenia/olvido-contrasenia.component';
 import { PrincipalComponent } from './components/principal/principal.component';
 import { RegistroPreferenciasComponent } from './components/registro-preferencias/registro-preferencias.component';
 import { RegistroComponent } from './components/registro/registro.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path:'buscar-persona',
     component: BuscarPersonaComponent
+  },
+  {
+    path:'olvido-contrasenia',
+    component: OlvidoContraseniaComponent
   },
 ];
 
