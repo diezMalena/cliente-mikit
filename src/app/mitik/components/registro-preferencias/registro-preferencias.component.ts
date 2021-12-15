@@ -87,12 +87,12 @@ export class RegistroPreferenciasComponent implements OnInit {
   public insertarPreferencias(preferencia: PreferenciaPersona){
     this.restPersonaService.addPreferenciaPersona(preferencia).subscribe({
       next: () => {
-        this.restNotificationService.showMessage(`Preferencia registrada correctamente.`, '');
+        //this.restNotificationService.showMessage('Preferencias registradas correctamente.');
         console.log('funciona preferencias');
         this.router.navigateByUrl('');
       },
       error: e => {
-        this.restNotificationService.showMessage('Error: ' + e );
+        this.restNotificationService.showMessage('Error al guardar las preferencias.');
       }
     });
   }
@@ -109,12 +109,12 @@ export class RegistroPreferenciasComponent implements OnInit {
 
     this.restPersonaService.updatePersona(this.correo,this.preferencias.controls['tieneHijos'].value,this.preferencias.controls['quiereHijos'].value, this.preferencias.value.tipoRelacion).subscribe({
       next: () => {
-        this.restNotificationService.showMessage(`Usuario ${this.preferencias.value.correo} registrado correctamente.`, '');
+        //this.restNotificationService.showMessage(`Usuario ${this.preferencias.value.correo} registrado correctamente.`, '');
         console.log('Funciona actualizar persona');
         this.router.navigateByUrl('');
       },
       error: e => {
-        this.restNotificationService.showMessage('Error: ' + e );
+        this.restNotificationService.showMessage('Error.');
       }
     });
 
@@ -157,12 +157,12 @@ export class RegistroPreferenciasComponent implements OnInit {
 
       this.restPersonaService.addGustoGenero(gusto_genero).subscribe({
         next: () => {
-          this.restNotificationService.showMessage(`Gusto genero add.`, '');
+          //this.restNotificationService.showMessage(`Gusto genero add.`, '');
           console.log('Funciona gusto genero');
           this.router.navigateByUrl('');
         },
         error: e => {
-          this.restNotificationService.showMessage('Error: ' + e );
+          this.restNotificationService.showMessage('Error');
         }
       });
 
