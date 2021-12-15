@@ -6,6 +6,7 @@ import { RegistroPreferenciasComponent } from './components/registro-preferencia
 import { MitikRoutingModule } from './mitik-routing.module';
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PrincipalComponent } from './components/principal/principal.component';
     RegistroComponent,
     RegistroPreferenciasComponent,
     LoginComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    NotificacionesComponent
   ],
   imports: [
     SharedModule,
