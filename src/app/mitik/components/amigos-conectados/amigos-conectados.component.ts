@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RestPersonaService } from '../../services/rest-persona.service';
 import { Persona } from '../../models/Persona/persona';
-import { RestNotificacionesService } from 'src/app/shared/services/rest-notificaciones.service';
 import { RestRecogerDatosService } from '../../services/rest-recogerDatos.service';
 import { Router } from '@angular/router';
 

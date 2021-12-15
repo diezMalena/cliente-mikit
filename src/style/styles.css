@@ -29,7 +29,7 @@
 .smallButton {
   border-radius: 10px 10px 10px 10px;
   width: 100px;
-  height: 20px;
+  height: 30px;
 }
 
 h1, .h1 {
@@ -12045,5 +12045,10 @@ fieldset:disabled .btn {
 
 .user {
   width: 44px;
+}
+
+.conectado {
+  border-radius: 1em 1em 1em 1em;
+  background-color: green;
 }
 /*# sourceMappingURL=styles.css.map */

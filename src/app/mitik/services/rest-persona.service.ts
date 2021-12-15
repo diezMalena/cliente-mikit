@@ -127,4 +127,15 @@ export class RestPersonaService {
     let dato={correo:correo};
     return this.http.post(url, dato, {headers: headers});
   }
+
+
+  public buscarPersona(correo:string){
+    let url: string = "http://127.0.0.1:8000/api/buscarPersona";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let dato={correo:correo};
+    return this.http.post(url, dato, {headers: headers});
+  }
+
 }
