@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('principal');
       },
       error: e => {
-        this.restNotificationService.showMessage('El correo no esta registrado.'),
+        this.restNotificationService.showMessage('El correo no esta registrado o la cuenta no esta activada.'),
         console.log('Persona no logueada');
       }
     })
