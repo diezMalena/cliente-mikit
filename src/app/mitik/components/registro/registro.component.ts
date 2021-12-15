@@ -83,7 +83,7 @@ export class RegistroComponent implements OnInit {
 
     this.restPersonaService.addPersona(persona).subscribe({
       next: () => {
-        this.restNotificationService.showMessage(`Usuario ${persona.correo} registrado correctamente.`, '');
+        this.restNotificationService.showMessage('El usuario se ha registrado correctamente.');
         //AQUI NO MUESTRA ESTE MENSAJE!
         console.log('Funciona registro');
         this.restRecogerDatos.cambiarCorreo(persona.correo);
@@ -91,7 +91,7 @@ export class RegistroComponent implements OnInit {
         this.router.navigateByUrl('registro-preferencias');
       },
       error: e => {
-        this.restNotificationService.showMessage('Fallo en el registro: '+ e)
+        this.restNotificationService.showMessage('Registro incorrecto.')
         //AQUI NO MUESTRA EL ERROR!
       }
     });
