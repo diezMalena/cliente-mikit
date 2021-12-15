@@ -47,8 +47,8 @@ export class RegistroPreferenciasComponent implements OnInit {
       arte: ['', [Validators.required]],
       musica: ['', [Validators.required]],
       politica: ['', [Validators.required]],
-      tieneHijos:['', [Validators.required]],
-      quiereHijos:['', [Validators.required]]
+      tieneHijos:['0', [Validators.required]],
+      quiereHijos:['0', [Validators.required]]
     });
   }
 
@@ -89,7 +89,7 @@ export class RegistroPreferenciasComponent implements OnInit {
       next: () => {
         this.restNotificationService.showMessage(`Preferencia registrada correctamente.`, '');
         console.log('funciona preferencias');
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('');
       },
       error: e => {
         this.restNotificationService.showMessage('Error: ' + e );
@@ -111,7 +111,7 @@ export class RegistroPreferenciasComponent implements OnInit {
       next: () => {
         this.restNotificationService.showMessage(`Usuario ${this.preferencias.value.correo} registrado correctamente.`, '');
         console.log('Funciona actualizar persona');
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('');
       },
       error: e => {
         this.restNotificationService.showMessage('Error: ' + e );
@@ -159,7 +159,7 @@ export class RegistroPreferenciasComponent implements OnInit {
         next: () => {
           this.restNotificationService.showMessage(`Gusto genero add.`, '');
           console.log('Funciona gusto genero');
-          this.router.navigateByUrl('login');
+          this.router.navigateByUrl('');
         },
         error: e => {
           this.restNotificationService.showMessage('Error: ' + e );
