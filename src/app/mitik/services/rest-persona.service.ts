@@ -156,4 +156,32 @@ export class RestPersonaService {
     let dato={correo:correo};
     return this.http.post(url, dato, {headers: headers});
   }
+
+
+  public personaAEditar(correo:string){
+    let url: string = "http://127.0.0.1:8000/api/personaAEditar";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let dato={correo:correo};
+    return this.http.post(url, dato, {headers: headers});
+  }
+
+
+  public editarPersona(correo:string,nombre:string,contraseña:string,ciudad:string,descripcion:string,id_genero:number){
+    let url: string = "http://127.0.0.1:8000/api/editarPersona";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let datos = {
+      'correo': correo,
+      'nombre': nombre,
+      'contraseña': contraseña,
+      'ciudad': ciudad,
+      'descripcion': descripcion,
+      'id_genero': id_genero,
+    };
+    var datosString = JSON.stringify(datos);
+    return this.http.put(url, datosString, {headers: headers});
+  }
 }
