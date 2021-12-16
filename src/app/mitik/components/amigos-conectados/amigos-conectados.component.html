@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div class="container">
+  <header class="row">
+    <div class="col-12">
+      <nav class="bg-cabecera container-fluid">
+        <div class="row">
+          <div class="col-4 float-start">
+            <a class="navbar-brand img-fluid" routerLink="/"><img src="{{ imgLogo }}" /></a>
+          </div>
+          <div class="col-8 float-end">
+            <div class="row float-end navbar">
+              <div class="dropdown col-4 float-end">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                  aria-expanded="false" style="width: 20%;">
+                  <img src="../../../../assets/user.png" class="user" alt="">
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" disabled>{{correo}}</a></li>
+                  <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+                  <li><a class="dropdown-item" href="#">Editar preferencias</a></li>
+                  <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <body class="bg-contenido container">
+    <div class="row">
+      <div class="col-12">
+        <div class="row">
+          <nav class="col-12">
+
+            <div class="row bg-nav">
+              <div class="col-12 d-flex justify-content-center">
+                <input type="button" value="Volver" class="redonditos bg-boton" routerLink="/principal">
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row border border-danger py-3 px-3">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="text-center">Amigos conectados</h2>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <ul class="list-group col-12 col-xl-5">
+          <li class="row bg-success p-2 text-dark bg-opacity-50 border border-danger py-3"
+            *ngFor="let amigo of amigosConectados">
+            <div class="col-1 col-xl-1">
+              <input type="button" class="conectado" disabled>
+            </div>
+
+            <div class="col-5 col-xl-5 negrita">
+              {{amigo[0].nombre}}
+            </div>
+
+            <div class="col-6 col-xl-6">
+              <button class="smallButton bg-boton float-end">Chatear</button>
+            </div>
+
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </body>
+
+  <!---->
+
+
+  <footer class="bg-cabecera">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-4 float-start px-2">
+          <p>@Copyright</p>
+        </div>
+        <div class="col-8 float-start px-2">
+          <p class="text-end">Creado por Malena</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+</html>

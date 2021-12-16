@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrate en Mitik</title>
+</head>
+<div class="container">
+  <header class="row">
+    <div class="col-12">
+      <nav class="bg-cabecera container-fluid">
+        <div class="row">
+          <div class="col-4 float-start">
+            <a class="navbar-brand img-fluid" routerLink="/"><img src="{{ imgLogo }}" /></a>
+          </div>
+          <div class="col-8 float-end">
+            <div class="row float-end navbar">
+              <div class="dropdown col-4 float-end">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                  aria-expanded="false" style="width: 20%;">
+                  <img src="../../../../assets/user.png" class="user" alt="">
+                </a>
+
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <li><a class="dropdown-item" disabled aria-disabled="true">{{correo}}</a></li>
+                  <li><a class="dropdown-item" href="#">Editar perfil</a></li>
+                  <li><a class="dropdown-item" href="#">Editar preferencias</a></li>
+                  <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </header>
+
+  <body class="bg-contenido container-fluid">
+    <div class="row">
+      <nav class="col-12">
+
+        <div class="row bg-nav">
+          <div class="col-12 d-flex justify-content-center">
+            <input type="button" value="Volver" class="redonditos bg-boton" routerLink="/principal">
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="row">
+      <div class="container-fluid d-flex justify-content-center">
+        <div class="col-12 py-3 px-3">
+          <div class="row">
+            <div class="col-12 col-xl-12">
+              <h2 class="text-center">¡Modifica tus datos y no olvides guardarlos!</h2>
+            </div>
+          </div>
+          <main class="form-signin py-2 px-5 border border-dark">
+            <form [formGroup]="editarPerfil" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-12 col-xl-8 text-center">
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">E-mail:</label>
+                    <span class="col-12 col-xl-9" aria-disabled="true">{{correo}}</span>
+                  </div>
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Nombre:</label>
+                    <input type="text" class="col-12 col-xl-9" formControlName="nombre" [(ngModel)]="persona.nombre">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['nombre'].errors">
+                        <div>El nombre: </div>
+                        <div *ngIf="formulario['nombre'].errors['required']">No puede estar vacío</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Ciudad:</label>
+                    <input type="text" class="col-12 col-xl-9" formControlName="ciudad" [(ngModel)]="persona.ciudad">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['ciudad'].errors">
+                        <div>La ciudad: </div>
+                        <div *ngIf="formulario['ciudad'].errors['required']">No puede estar vacía</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Descripción:</label>
+                    <textarea class="col-12 col-xl-9" formControlName="descripcion"
+                      [(ngModel)]="persona.descripcion"></textarea>
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['descripcion'].errors">
+                        <div>La descripción: </div>
+                        <div *ngIf="formulario['descripcion'].errors['required']">No puede estar vacía</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Géneros:</label>
+                    <select class="form-select" formControlName="id_genero" class="col-12 col-xl-9"
+                      [(ngModel)]="persona.id_genero">
+                      <option value="" disabled>Elige tu género</option>
+                      <option *ngFor="let genero of generos" [ngValue]="genero.id">{{genero.descripcion}}</option>
+                    </select>
+
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['id_genero'].errors">
+                        <div>El género: </div>
+                        <div *ngIf="formulario['id_genero'].errors['required']">No puede estar vacío</div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="row py-2">
+                    <label class="col-12 col-xl-3 negrita">Contraseña:</label>
+                    <input type="password" class="col-12 col-xl-9" formControlName="contraseña">
+                    <div class="row">
+                      <div class="col-3" *ngIf="submitted && formulario['contraseña'].errors">
+                        <div>La contraseña: </div>
+                        <div *ngIf="formulario['contraseña'].errors['required']">No puede estar vacía</div>
+                        <div *ngIf="formulario['contraseña'].errors['minlenght']">Debe contener más de 5 caracteres
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-12 col-xl-4 py-2 px-2 text-center">
+                  <div class="row d-flex justify-content-center">
+                    <img src="" class="imgRedonda" id="fotoPerfil">
+                  </div>
+
+                  <div class="row d-flex justify-content-center">
+                    <form name="formulario" method="post" action="/send.php" enctype="multipart/form-data">
+                      <input type="file" name="adjunto" accept=".pdf,.jpg,.png" multiple />
+                    </form>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row py-2 d-flex justify-content-center">
+                <div class="col-6 col-xl-6 d-flex justify-content-center">
+                  <input type="submit" value="Guardar cambios" class="bg-boton redonditos">
+                </div>
+              </div>
+            </form>
+            <div class="row py-2 border border-danger border-4 d-flex justify-content-center">
+              <div class="col-12 col-xl-8 text-center">
+                <p>¿Quieres eliminar definitivamente tu cuenta?</p>
+              </div>
+              <div class="col-12 col-xl-4">
+                <input type="button" value="Eliminar mi cuenta" class="bg-danger" (click)="borrarCuenta(correo)">
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer class="bg-cabecera">
+    <div class="row">
+      <div class="container-fluid">
+        <div class="col-4 float-start px-2">
+          <p>@Copyright</p>
+        </div>
+        <div class="col-8 float-start px-2">
+          <p class="text-end">Creado por Malena</p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+</div>
+
+</html>

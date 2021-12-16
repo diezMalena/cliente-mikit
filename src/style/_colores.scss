@@ -1,0 +1,31 @@
+//Variables de colores:
+$cabecera_footer: #F53DAE;
+$fondo_contenido: #FF9494;
+$fondo_nav:	#DECCCC;
+$botones: #66cece;
+
+//Colores secundarios:
+$secundario1: #FF87D1;
+$secundario2: #FFC4C4;
+$secundario3: #FCF2F2;
+$secundario4: #CBF2F2; //encendido de los botones.
+
+.bg-cabecera{
+  background-color: $cabecera_footer;
+}
+
+.bg-contenido{
+  background-color: $fondo_contenido;
+}
+
+.bg-boton{
+  background-color: $botones;
+}
+
+.bg-boton:hover{
+  background-color: #b5e2e2;
+}
+
+.bg-nav{
+  background-color: $fondo_nav;
+}
