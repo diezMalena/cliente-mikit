@@ -10,6 +10,7 @@ import { NotificacionesComponent } from './components/notificaciones/notificacio
 import { AmigosConectadosComponent } from './components/amigos-conectados/amigos-conectados.component';
 import { BuscarPersonaComponent } from './components/buscar-persona/buscar-persona.component';
 import { OlvidoContraseniaComponent } from './components/olvido-contrasenia/olvido-contrasenia.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { OlvidoContraseniaComponent } from './components/olvido-contrasenia/olvi
     AmigosConectadosComponent,
     BuscarPersonaComponent,
     OlvidoContraseniaComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     SharedModule,
