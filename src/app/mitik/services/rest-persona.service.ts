@@ -184,4 +184,14 @@ export class RestPersonaService {
     var datosString = JSON.stringify(datos);
     return this.http.put(url, datosString, {headers: headers});
   }
+
+
+  public borrarCuenta(correo:string){
+    let url: string = "http://127.0.0.1:8000/api/borrarCuenta";
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let dato={correo:correo};
+    return this.http.post(url, dato, {headers: headers});
+  }
 }

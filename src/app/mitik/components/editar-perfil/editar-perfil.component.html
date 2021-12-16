@@ -54,11 +54,11 @@
         <div class="col-12 py-3 px-3">
           <div class="row">
             <div class="col-12 col-xl-12">
-              <p class="text-center">¡Modifica tus datos y no olvides guardarlos!</p>
+              <h2 class="text-center">¡Modifica tus datos y no olvides guardarlos!</h2>
             </div>
           </div>
-          <main class="form-signin py-2">
-            <form [formGroup]="editarPerfil" (ngSubmit)="onSubmit()" class="py-2 px-5 border border-dark">
+          <main class="form-signin py-2 px-5 border border-dark">
+            <form [formGroup]="editarPerfil" (ngSubmit)="onSubmit()">
               <div class="row">
                 <div class="col-12 col-xl-8 text-center">
 
@@ -157,6 +157,14 @@
                 </div>
               </div>
             </form>
+            <div class="row py-2 border border-danger border-4 d-flex justify-content-center">
+              <div class="col-12 col-xl-8 text-center">
+                <p>¿Quieres eliminar definitivamente tu cuenta?</p>
+              </div>
+              <div class="col-12 col-xl-4">
+                <input type="button" value="Eliminar mi cuenta" class="bg-danger" (click)="borrarCuenta(correo)">
+              </div>
+            </div>
           </main>
         </div>
       </div>

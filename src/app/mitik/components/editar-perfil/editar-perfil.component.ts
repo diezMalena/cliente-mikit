@@ -93,6 +93,18 @@ export class EditarPerfilComponent implements OnInit {
 
   }
 
+  borrarCuenta(correo:string){
+    this.restPersonaService.borrarCuenta(correo).subscribe({
+      next: () => {
+        console.log('persona borrada correctamente');
+        this.router.navigateByUrl('');
+      },
+      error: e => {
+        this.restNotificationService.showMessage('Error: Persona no borrada');
+      }
+  });
+  }
+
 
   onReset(){
     this.submitted = false;
