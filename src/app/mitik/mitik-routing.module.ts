@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AmigosConectadosComponent } from './components/amigos-conectados/amigos-conectados.component';
 import { BuscarPersonaComponent } from './components/buscar-persona/buscar-persona.component';
+import { EditarPerfilComponent } from './components/editar-perfil/editar-perfil.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotificacionesComponent } from './components/notificaciones/notificaciones.component';
 import { OlvidoContraseniaComponent } from './components/olvido-contrasenia/olvido-contrasenia.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path:'olvido-contrasenia',
     component: OlvidoContraseniaComponent
+  },
+  {
+    path:'editar-perfil',
+    component: EditarPerfilComponent
   },
 ];
 
